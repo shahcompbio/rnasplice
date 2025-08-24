@@ -54,13 +54,13 @@ names(fns) <- names
 
 # Run Tximport across countsFromAbundance options
 
-txi <- tximport::tximport(fns, type = "salmon", txOut = TRUE,
+txi <- tximport::tximport(fns, type = "kallisto", txOut = TRUE,
                         countsFromAbundance = "no")
 
-txi.s <- tximport::tximport(fns, type = "salmon", txOut = TRUE,
+txi.s <- tximport::tximport(fns, type = "kallisto", txOut = TRUE,
                             countsFromAbundance = "scaledTPM")
 
-txi.ls <- tximport::tximport(fns, type = "salmon", txOut = TRUE,
+txi.ls <- tximport::tximport(fns, type = "kallisto", txOut = TRUE,
                             countsFromAbundance = "lengthScaledTPM")
 
 ####################################################
@@ -94,11 +94,11 @@ if (length(missing_txids) > 0) {
 
     tx2gene_complete <- tx2gene_complete[match(rownames(txi[[1]]), as.character(tx2gene_complete[["tx"]])),]
 
-    txi.dtu <- tximport::tximport(fns, type = "salmon", tx2gene = tx2gene_complete,
+    txi.dtu <- tximport::tximport(fns, type = "kallisto", tx2gene = tx2gene_complete,
                                 txOut = TRUE, countsFromAbundance = "dtuScaledTPM")
 } else {
 
-    txi.dtu <- tximport::tximport(fns, type = "salmon", tx2gene = tx2gene,
+    txi.dtu <- tximport::tximport(fns, type = "kallisto", tx2gene = tx2gene,
                                 txOut = TRUE, countsFromAbundance = "dtuScaledTPM")
 }
 

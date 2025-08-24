@@ -45,7 +45,7 @@ if (!file.exists(tx2gene)) {
 # Collect salmon quant files
 
 # fns <- list.files(path, pattern = "quant.sf", recursive = T, full.names = T)
-fns <- list.files(path, pattern = "abundance.tsv", recursive = T, full.names = T)
+fns <- list.files(path, pattern = "abundance.h5", recursive = T, full.names = T)
 names <- basename(dirname(fns))
 names(fns) <- names
 

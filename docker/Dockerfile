@@ -1,2 +1,3 @@
-FROM quay.io/biocontainers/bioconductor-tximeta:1.8.0--r40_0
+FROM bioconductor/bioconductor_docker:3.20-R-4.4.2
+RUN R -e 'BiocManager::install("tximeta")'
 RUN R -e 'BiocManager::install("rhdf5")'

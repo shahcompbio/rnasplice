@@ -4,6 +4,7 @@
 # License: MIT
 
 library(tximport)
+library(rhdf5)
 
 args <- commandArgs(trailingOnly=TRUE)
 
